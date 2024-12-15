@@ -354,12 +354,8 @@ if (document.readyState == "loading") {
 
         this.fetch_results = function (search) {
             let ajax_url = this.element.getAttribute("data-ajax-url");
-            let add_para = this.element.getAttribute("data-add-para");
-            if(add_para != null || add_para != undefined){
-                ajax_url += "?search=" + search+ add_para;
-            }else{
-                ajax_url += "?search=" + search;
-            }
+            ajax_url += "?search=" + search;
+            
             console.log("ajax_url");
             console.log(ajax_url);
             this.xhr.open("GET", ajax_url, true);
